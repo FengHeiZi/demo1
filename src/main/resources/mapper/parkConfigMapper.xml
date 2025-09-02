@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.test.demo2.mapper.ParkConfigMapper">
+    <resultMap id="ParkConfigResult" type="org.test.demo2.entity.ParkConfig">
+        <id property="parkId" column="id" />
+        <result property="parkName" column="name" />
+        <result property="lotSn" column="lot_sn" />
+        <result property="address" column="address" />
+        <result property="totalSpaces" column="total_spaces" />
+        <result property="availableSpaces" column="available_spaces" />
+        <result property="contactPerson" column="contact_person" />
+        <result property="contactPhone" column="contact_phone" />
+        <result property="lng" column="lng" />
+        <result property="lat" column="lat" />
+        <result property="status" column="status" />
+        <result property="createTime" column="create_time" />
+        <result property="updateTime" column="update_time" />
+    </resultMap>
+
+    <sql id="selectParkConfig">
+        select id, name, lot_sn, address, total_spaces, available_spaces, contact_person, contact_phone, lng, lat, status, create_time, update_time
+        from parking_lot
+    </sql>
+
+    <select id="selectParkConfigList" resultMap="ParkConfigResult" >
+        <include refid="selectParkConfig"/>
+    </select>
+    
+</mapper>
