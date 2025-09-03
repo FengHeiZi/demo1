@@ -10,4 +10,6 @@ import java.util.List;
 public interface ParkConfigMapper extends BaseMapper<ParkConfig> {
 
     List<ParkConfig> selectParkConfigList();
+
+    List<ParkConfig> selectParkConfigListByName(String parkName);
 }

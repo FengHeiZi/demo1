@@ -25,5 +25,12 @@
     <select id="selectParkConfigList" resultMap="ParkConfigResult" >
         <include refid="selectParkConfig"/>
     </select>
+
+    <select id="selectParkConfigListByName" resultMap="ParkConfigResult" parameterType="String">
+        <include refid="selectParkConfig"/>
+        <where>
+            <if test="parkName != null and parkName !='' "> and name like concat('%', #{name}, '%')</if>
+        </where>
+    </select>
     
 </mapper>
