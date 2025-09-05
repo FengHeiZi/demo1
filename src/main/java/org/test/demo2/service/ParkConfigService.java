@@ -18,4 +18,6 @@ public interface ParkConfigService extends IService<ParkConfig> {
     List<ParkConfig> getParkConfigList(int pageNum, int pageSize);
 
     List<ParkConfig> getParkConfigListByName(String parkName);
+
+    int addParkConfig(ParkConfig parkConfig);
 }

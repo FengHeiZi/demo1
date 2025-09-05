@@ -1,6 +1,8 @@
 package org.test.demo2.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -8,8 +10,8 @@ import lombok.Data;
 @Data
 @TableName("parking_lot")
 public class ParkConfig {
-    @TableField("id")
-    private long parkId;
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    private Long parkId;
     @TableField("name")
     private String parkName;
     private String lotSn;
@@ -24,6 +26,8 @@ public class ParkConfig {
     private String contactPhone;
     //经度
     private String lng;
+    //营业时间
+    private String openingHours;
     // 纬度
     private String lat;
     // 状态

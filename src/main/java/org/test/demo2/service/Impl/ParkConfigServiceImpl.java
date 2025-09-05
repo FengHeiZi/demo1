@@ -40,4 +40,10 @@ public class ParkConfigServiceImpl extends ServiceImpl<ParkConfigMapper, ParkCon
         return parkConfigList;
     }
 
+    @Override
+    public int addParkConfig(ParkConfig parkConfig){
+        int insert = baseMapper.insert(parkConfig);
+        return insert;
+    }
+
 }

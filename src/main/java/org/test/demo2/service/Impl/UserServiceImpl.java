@@ -48,7 +48,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             User userRegister = new User();
             userRegister.setUsername(username);
             userRegister.setPassword(password);
-            userRegister.setRole(3);
             return userMapper.insert(userRegister);
         }
     }

@@ -1,12 +1,10 @@
 package org.test.demo2.controller;
 
+import com.alibaba.fastjson2.JSONObject;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.test.demo2.entity.ParkConfig;
 import org.test.demo2.service.ParkConfigService;
 import org.test.demo2.utils.R;
@@ -34,7 +32,7 @@ public class parkingController {
      */
     @PostMapping("/getParkConfigByName")
     public R getParkConfigByName(@RequestParam String parkName) {
-        if (parkName == null||parkName.equals(" ")){
+        if (parkName == null||parkName.isEmpty()){
             return R.error().message("车场名称为空");
         }
         List<ParkConfig> parkConfig= parkConfigService.getParkConfigListByName(parkName);
@@ -54,4 +52,24 @@ public class parkingController {
         List<ParkConfig> parkConfigList = parkConfigService.getParkConfigList(page, size);
         return R.ok().data(parkConfigList);
     }
+
+    /**
+     * 添加车场
+     * @param data
+     * @return
+     */
+    @PostMapping("/addParkConfig")
+    public R addParkConfig(@RequestBody ParkConfig data){
+//        String parkName = data.getParkName();
+//        String lotSn = data.getLotSn();
+//        String address = data.getAddress();
+//        Integer totalSpaces = data.getTotalSpaces();
+//        Integer availableSpaces = data.getAvailableSpaces();
+        int i = parkConfigService.addParkConfig(data);
+        if (i == 0){
+            return R.error().message("请求失败");
+        }
+        return R.ok();
+    }
+
 }
