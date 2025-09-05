@@ -12,4 +12,6 @@ public interface ParkConfigMapper extends BaseMapper<ParkConfig> {
     List<ParkConfig> selectParkConfigList();
 
     List<ParkConfig> selectParkConfigListByName(String parkName);
+
+    int deleteParkConfigBySn(String parkId);
 }

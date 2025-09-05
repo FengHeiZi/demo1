@@ -46,4 +46,10 @@ public class ParkConfigServiceImpl extends ServiceImpl<ParkConfigMapper, ParkCon
         return insert;
     }
 
+    @Override
+    public int deleteParkConfigBySn(String lotSn) {
+        int i = parkConfigMapper.deleteParkConfigBySn(lotSn);
+        return i;
+    }
+
 }

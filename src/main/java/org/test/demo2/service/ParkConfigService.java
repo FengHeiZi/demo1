@@ -20,4 +20,7 @@ public interface ParkConfigService extends IService<ParkConfig> {
     List<ParkConfig> getParkConfigListByName(String parkName);
 
     int addParkConfig(ParkConfig parkConfig);
+
+    int deleteParkConfigBySn(String parkId);
+
 }

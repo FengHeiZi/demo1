@@ -32,5 +32,12 @@
             <if test="parkName != null and parkName !='' "> and name like concat('%', #{name}, '%')</if>
         </where>
     </select>
+
+    <delete id="deleteParkConfigBySn" parameterType="String">
+        delete from parking_lot
+        <where>
+            lot_sn = #{lotSn}
+        </where>
+    </delete>
     
 </mapper>

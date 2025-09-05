@@ -60,12 +60,21 @@ public class parkingController {
      */
     @PostMapping("/addParkConfig")
     public R addParkConfig(@RequestBody ParkConfig data){
-//        String parkName = data.getParkName();
-//        String lotSn = data.getLotSn();
-//        String address = data.getAddress();
-//        Integer totalSpaces = data.getTotalSpaces();
-//        Integer availableSpaces = data.getAvailableSpaces();
         int i = parkConfigService.addParkConfig(data);
+        if (i == 0){
+            return R.error().message("请求失败");
+        }
+        return R.ok();
+    }
+
+    /**
+     * 删除车场
+     * @param lotSn
+     * @return
+     */
+    @PostMapping("/deleteParkConfigBySn")
+    public R deleteParkConfigBySn(@RequestParam String lotSn){
+        int i = parkConfigService.deleteParkConfigBySn(lotSn);
         if (i == 0){
             return R.error().message("请求失败");
         }

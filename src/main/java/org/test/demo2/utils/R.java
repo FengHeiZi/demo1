@@ -9,14 +9,12 @@ public class R<T>{
     private Integer code;
     private String msg;
     private T data;
-    private String success;
     private R(){
 
     }
     public static R ok(){
         R r = new R();
         r.setCode(200);
-        r.setSuccess("success");
         r.setMsg("请求成功");
         return r;
     }
@@ -24,7 +22,6 @@ public class R<T>{
     public static R error(){
         R r = new R();
         r.setCode(500);
-        r.setSuccess("error");
         r.setMsg("请求失败");
         return r;
     }
