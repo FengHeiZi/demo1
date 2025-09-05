@@ -11,7 +11,7 @@ import org.test.demo2.service.UserService;
 import org.test.demo2.utils.R;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/auth")
 @Slf4j
 public class LoginController {
 
