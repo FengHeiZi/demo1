@@ -2,12 +2,12 @@ package org.test.demo2.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.stereotype.Service;
-import org.test.demo2.entity.User;
+import org.test.demo2.entity.UserInfo;
 
 @Service
-public interface UserService extends IService<User> {
+public interface UserService extends IService<UserInfo> {
 
-    User getUserById(String  id);
+    UserInfo getUserById(String  id);
 
     /**
      * 用户登录接口

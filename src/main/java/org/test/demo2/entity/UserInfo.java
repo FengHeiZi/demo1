@@ -1,15 +1,12 @@
 package org.test.demo2.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
 @TableName("sys_user")
-public class User {
+public class UserInfo {
     private long id;
-    private String username;
-    private String password;
     private String realName;
     private String phone;
     //角色：1-超级管理员，2-停车场管理员，3-操作员
