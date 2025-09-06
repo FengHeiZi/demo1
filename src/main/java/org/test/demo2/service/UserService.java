@@ -7,21 +7,6 @@ import org.test.demo2.entity.UserInfo;
 @Service
 public interface UserService extends IService<UserInfo> {
 
-    UserInfo getUserById(String  id);
+    int updateUserInfo(UserInfo userInfo);
 
-    /**
-     * 用户登录接口
-     *
-     * @param username
-     * @param password
-     */
-    int login(String username, String password);
-
-    /**
-     * 用户注册接口
-     *
-     * @param username
-     * @param password
-     */
-    int registered(String username, String password);
 }

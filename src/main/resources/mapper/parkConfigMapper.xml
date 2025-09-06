@@ -39,5 +39,6 @@
             lot_sn = #{lotSn}
         </where>
     </delete>
+
     
 </mapper>

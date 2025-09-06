@@ -21,6 +21,12 @@ public class UserPasswordImpl extends ServiceImpl<UserPasswordMapper, UserPasswo
         return baseMapper.selectById(id);
     }
 
+    /**
+     * 登录
+     * @param username
+     * @param password
+     * @return
+     */
     @Override
     public int login(String username, String password) {
         String passwordMD5 = MD5Utils.MD5Upper(password);
@@ -35,6 +41,13 @@ public class UserPasswordImpl extends ServiceImpl<UserPasswordMapper, UserPasswo
         }
         return 1;
     }
+
+    /**
+     * 注册
+     * @param username
+     * @param password
+     * @return
+     */
     @Override
     public int registered(String username, String password) {
 

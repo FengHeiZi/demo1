@@ -6,4 +6,9 @@ import org.test.demo2.entity.UserInfo;
 
 @Mapper
 public interface UserMapper extends BaseMapper<UserInfo> {
+
+
+    int updateUserInfo(UserInfo userInfo);
+
+    int updateUserInfoByAdmin(UserInfo userInfo);
 }

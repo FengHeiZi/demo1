@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.test.demo2.mapper.UserMapper">
+    <update id="updateUserInfo" parameterType="org.test.demo2.entity.UserInfo">
+        update sys_user
+        <set>
+            <if test="realName != null and realName != ''" > real_name = #{realName}, </if>
+            <if test="phone != null and phone != ''"> phone = #{phone}, </if>
+            <if test="parkingLotSn != null and parkingLotSn != ''"> parking_lot_sn = #{parkingLotSn}, </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateUserInfoByAdmin" parameterType="org.test.demo2.entity.UserInfo">
+        update sys_user
+        <set>
+            <if test="realName != null and realName != ''" > real_name = #{realName}, </if>
+            <if test="phone != null and phone != ''"> phone = #{phone}, </if>
+            <if test="role != null and role != ''"> role = #{role}, </if>
+            <if test="parkingLotSn != null and parkingLotSn != ''"> parking_lot_sn = #{parkingL}</if>
+            <if test="status != null and status != ''"> status = #{status}, </if>
+        </set>
+        where id = #{id}
+    </update>
+
+
+
+
+
+</mapper>
